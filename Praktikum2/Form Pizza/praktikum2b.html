@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head style="background-color: bisque;">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h1 align="center">THANK YOU !!!!</h1>
     <hr>
@@ -30,22 +32,23 @@
 
     <script>
         const params = new URLSearchParams(window.location.search);
-        
+
         // Tampilkan data personal
         document.getElementById('name').textContent = params.get('name') || '-';
         document.getElementById('address').textContent = params.get('address') || '-';
         document.getElementById('phone').textContent = params.get('phone') || '-';
         document.getElementById('email').textContent = params.get('email') || '-';
         document.getElementById('instructions').textContent = params.get('instructions') || 'Tidak ada';
-        
+
         // Tampilkan data pizza
         document.getElementById('crust').textContent = params.get('crust') || '-';
         document.getElementById('toppings').textContent = params.get('toppings') || 'Tidak ada';
         document.getElementById('quantity').textContent = params.get('quantity') || '-';
-        
+
         function orderAgain() {
             window.location.href = 'praktikum2a.html';
         }
     </script>
 </body>
+
 </html>

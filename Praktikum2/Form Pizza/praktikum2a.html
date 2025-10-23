@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Pizza</title>
 </head>
+
 <body>
     <h1>Black Diamond | Pizza on Demand</h1>
     <hr>
-    <p>"Order your dream pizza easily through our website. Choose your favorite toppings, customize your order to your liking, and complete your payment securely. We're ready to deliver hot pizza straight to your home."</p>
-        <button><a href="https://www.tiktok.com/@sabuk.perang?is_from_webapp=1&sender_device=pc">Follow Sabuk Perang !!!</a></button>
+    <p>"Order your dream pizza easily through our website. Choose your favorite toppings, customize your order to your
+        liking, and complete your payment securely. We're ready to deliver hot pizza straight to your home."</p>
+    <button><a href="https://www.tiktok.com/@sabuk.perang?is_from_webapp=1&sender_device=pc">Follow Sabuk Perang
+            !!!</a></button>
     <form action="" method="post">
         <table border="1">
             <thead>
@@ -40,7 +44,7 @@
                 </tr>
             </tbody>
         </table>
-<br>
+        <br>
         <fieldset>
             <legend><b>Design Your Dream Pizza:</b></legend>
             <p>Pizza Specs</p>
@@ -100,19 +104,19 @@
             </ul>
         </fieldset>
         <fieldset>
-        <h4>Number</h4>
-        <label for="count">How Many Pizza</label>
-        <input type="number" name="count" id="">
-        <br>
-        <button type="submit"><a href="praktikum2b.html">Bring me a pizza</a></button>
-        <button type="reset">Cancel</button>
+            <h4>Number</h4>
+            <label for="count">How Many Pizza</label>
+            <input type="number" name="count" id="">
+            <br>
+            <button type="submit"><a href="praktikum2b.html">Bring me a pizza</a></button>
+            <button type="reset">Cancel</button>
         </fieldset>
     </form>
 
-     <script>
-        document.getElementById("pizzaForm").addEventListener("submit", function(e) {
+    <script>
+        document.getElementById("pizzaForm").addEventListener("submit", function (e) {
             e.preventDefault();
-            
+
             // Ambil data form
             const name = document.getElementById("name").value;
             const address = document.getElementById("address").value;
@@ -121,14 +125,14 @@
             const delivery = document.getElementById("delivery").value;
             const crust = document.querySelector("input[name='crust']:checked").value;
             const count = document.getElementById("count").value;
-            
+
             // Ambil toppings yang dipilih
             const toppings = [];
             document.querySelectorAll("input[name='toppings']:checked").forEach(cb => {
                 toppings.push(cb.value);
             });
             const toppingsList = toppings.join(", ") || "Tidak ada";
-            
+
             // Buat URL dengan query parameters
             const queryParams = new URLSearchParams({
                 name: name,
@@ -140,10 +144,11 @@
                 toppings: toppingsList,
                 quantity: count
             });
-            
+
             // Redirect ke halaman kedua dengan data
             window.location.href = "praktikum2b.html?" + queryParams.toString();
         });
     </script>
 </body>
+
 </html>
