@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Fighting Championship</title>
+    <script>
+        let fighter1 = {
+            nama : " Israel Adesanya ",
+            skill : 5000,
+            latihan : function(sesi) {
+                console.log(this.nama + " Sedang Latihan " + sesi + " sesi");
+                this.skill = this.skill + (sesi * 100);
+            },
+            pukul : function(lawan) {
+                console.log(this.nama + " Sedang memukul " +
+                lawan.nama + "dengan power " + this.skill);
+                this.skill = this.skill - 300;
+                lawan.skill = lawan.skill - 300;
+            }
+        }
+
+        let fighter2 = {
+            nama : " Alex Pereira ",
+            skill : 4000,
+            latihan : function(sesi) {
+                console.log(this.nama + " Sedang Latihan " + sesi + " sesi");
+                this.skill = this.skill + (sesi * 200);
+            },
+            pukul : function(lawan) {
+                console.log(this.nama + " Sedang memukul " +
+                lawan.nama + " dengan power " + this.skill);
+                this.skill = this.skill - 300;
+                lawan.skill = lawan.skill - 300;
+            }
+        };
+
+        console.log(" skill awal " + fighter2.nama + " : " + fighter2.skill);
+        fighter1.latihan(5);
+        fighter2.latihan(3);
+        console.log(" skill setelah latihan " + fighter1.nama + " : " + fighter1.skill);
+        console.log(" skill setelah latihan " + fighter2.nama + " : " + fighter2.skill);
+        fighter1.pukul(fighter2);
+        console.log(" skill setelah bertarung " + fighter1.nama + " : " + fighter1.skill);
+        console.log(" skill setelah bertarung " + fighter2.nama + " : " + fighter2.skill);
+        fighter2.pukul(fighter1);
+        console.log(" skill setelah bertarung " + fighter1.nama + " : " + fighter1.skill);
+        console.log(" skill setelah bertarung " + fighter2.nama + " : " + fighter2.skill);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
