@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+<body>
+    <h1>Form Validation</h1>
+
+    <form onsubmit="return false" id="myForm">
+        <label for="name">Nama : </label>
+        <input type="text" id="name" placeholder="Masukan Nama Anda" maxlength="30" required>
+        <span id="errorName"></span>
+        <br><br>
+
+        <label for="email">E-mail : </label>
+        <input type="email" id="email" placeholder="Masukan E-mail Anda" required>
+        <span id="errorEmail"></span>
+        <br><br>
+
+        <label for="jam">Jam Keberangkatan : </label>
+        <input type="time" id="jam" required>
+        <span id="errorJam"></span>
+        <br><br>
+
+        <label for="tujuan">Tujuan Keberangkatan : </label>
+        <input type="text" id="tujuan" placeholder="Masukan Tujuan Keberangkatan" required>
+        <span id="errorTujuan"></span>
+        <br><br>
+
+        <label for="tiket">Jumlah Tiket : </label>
+        <input type="number" id="tiket" placeholder="Masukan Jumlah Tiket">
+        <span id="errorTiket"></span>
+        <br><br>
+
+        <input type="button" value="Submit" onclick="formValidation()">
+        <input type="button" value="Isi Ulang" onclick="reload()">
+    </form>
+
+    <br><br>
+    <div>
+        <h1 id="hasil" style="text-decoration: underline"></h1>
+        <p id="hasilName" style="font-size: 20px"></p>
+        <p id="hasilEmail" style="font-size: 20px"></p>
+        <p id="hasilJam" style="font-size: 20px"></p>
+        <p id="hasilTujuan" style="font-size: 20px"></p>
+        <p id="hasilTiket" style="font-size: 20px"></p>
+    </div>
+
+    <script>
+        function formValidation() {
+            // Reset semua error message
+            document.getElementById("errorName").innerHTML = "";
+            document.getElementById("errorEmail").innerHTML = "";
+            document.getElementById("errorJam").innerHTML = "";
+            document.getElementById("errorTujuan").innerHTML = "";
+            document.getElementById("errorTiket").innerHTML = "";
+
+            // Ambil nilai dari input
+            let nama = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let jam = document.getElementById("jam").value;
+            let tujuan = document.getElementById("tujuan").value;
+            let tiket = document.getElementById("tiket").value;
+
+            document.getElementById("hasil").innerHTML = "Validasi Data";
+
+            // Validasi data
+            if (nama.toLowerCase() == "dzaki" && email == "dzakifasya4@gmail.com" && jam == "10:00" && tujuan.toLowerCase() == "mekkah" && tiket == "3") {
+                document.getElementById("hasilName").innerHTML = "Nama Pelanggan : " + nama;
+                document.getElementById("hasilEmail").innerHTML = "Email : " + email;
+                document.getElementById("hasilJam").innerHTML = "Jam Keberangkatan : " + jam;
+                document.getElementById("hasilTujuan").innerHTML = "Tujuan : " + tujuan;
+                document.getElementById("hasilTiket").innerHTML = "Tiket : " + tiket;
+            } else {
+                // Tampilkan error untuk setiap field yang salah
+                if (nama.toLowerCase() != "dzaki") {
+                    document.getElementById("errorName").innerHTML = " DATA TIDAK DITEMUKAN";
+                    document.getElementById("errorName").style = "color:red";
+                }
+
+                if (email != "dzakifasya4@gmail.com") {
+                    document.getElementById("errorEmail").innerHTML = " DATA TIDAK DITEMUKAN";
+                    document.getElementById("errorEmail").style = "color:red";
+                }
+
+                if (jam != "10:00") {
+                    document.getElementById("errorJam").innerHTML = " DATA TIDAK DITEMUKAN";
+                    document.getElementById("errorJam").style = "color:red";
+                }
+
+                if (tujuan.toLowerCase() != "mekkah") {
+                    document.getElementById("errorTujuan").innerHTML = " DATA TIDAK DITEMUKAN";
+                    document.getElementById("errorTujuan").style = "color:red";
+                }
+
+                if (tiket != "3") {
+                    document.getElementById("errorTiket").innerHTML = " DATA TIDAK DITEMUKAN";
+                    document.getElementById("errorTiket").style = "color:red";
+                }
+            }
+        }
+
+        function reload() {
+            window.location.reload();
+        }
+    </script>
+</body>
+</html>
