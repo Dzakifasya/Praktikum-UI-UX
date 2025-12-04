@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Kalkulator Penjumlahan</title>
+</head>
+<body>
+    <h2>Program Menghitung Jumlah Dua Bilangan</h2>
+    
+    <input type="number" id="bilangan1" value="4">
+    <br><br>
+    
+    +
+    <br><br>
+    
+    <input type="number" id="bilangan2" value="5">
+    <br><br>
+    
+    =
+    <br><br>
+    
+    <input type="text" id="hasil" value="9" readonly>
+
+    <script>
+        // Mendapatkan elemen input dan hasil
+        const bilangan1Input = document.getElementById('bilangan1');
+        const bilangan2Input = document.getElementById('bilangan2');
+        const hasilInput = document.getElementById('hasil');
+
+        // Fungsi untuk menghitung jumlah
+        function hitungJumlah() {
+            // Mengambil nilai dari input dan mengkonversi ke number
+            const bil1 = parseFloat(bilangan1Input.value) || 0;
+            const bil2 = parseFloat(bilangan2Input.value) || 0;
+            
+            // Menghitung hasil penjumlahan
+            const jumlah = bil1 + bil2;
+            
+            // Menampilkan hasil
+            hasilInput.value = jumlah;
+        }
+
+        // Event handler onChange untuk input pertama
+        bilangan1Input.addEventListener('change', hitungJumlah);
+        
+        // Event handler onChange untuk input kedua
+        bilangan2Input.addEventListener('change', hitungJumlah);
+
+        // Hitung hasil awal
+        hitungJumlah();
+    </script>
+</body>
+</html>
