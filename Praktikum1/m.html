@@ -1,0 +1,432 @@
+<!DOCTYPE html> <html lang="id"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Presentasi - Website Komunitas MMA Sabuk Perang</title> <style> * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        color: #fff;
+        overflow: hidden;
+    }
+
+    .slides {
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+
+    .slide {
+        min-width: 100vw;
+        min-height: 100vh;
+        padding: 60px 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .slide h1 {
+        font-size: 3em;
+        margin-bottom: 20px;
+        color: #e63946;
+        text-align: center;
+    }
+
+    .slide h2 {
+        font-size: 2.5em;
+        margin-bottom: 30px;
+        color: #e63946;
+        border-bottom: 3px solid #e63946;
+        padding-bottom: 10px;
+    }
+
+    .slide h3 {
+        font-size: 1.8em;
+        margin: 25px 0 15px;
+        color: #ff6b6b;
+    }
+
+    .slide p, .slide li {
+        font-size: 1.3em;
+        line-height: 1.8;
+        margin-bottom: 15px;
+    }
+
+    .slide ul {
+        margin-left: 40px;
+    }
+
+    .author {
+        text-align: center;
+        margin-top: 30px;
+        font-size: 1.5em;
+        color: #ccc;
+    }
+
+    .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        margin-top: 30px;
+    }
+
+    .box {
+        background: rgba(230, 57, 70, 0.1);
+        padding: 20px;
+        border-radius: 10px;
+        border-left: 4px solid #e63946;
+    }
+
+    .flowchart {
+        background: rgba(255,255,255,0.05);
+        padding: 30px;
+        border-radius: 10px;
+        text-align: center;
+        margin: 30px 0;
+    }
+
+    .flowchart-item {
+        background: #e63946;
+        padding: 15px 30px;
+        border-radius: 8px;
+        margin: 10px 0;
+        font-size: 1.2em;
+    }
+
+    .arrow {
+        font-size: 2em;
+        color: #e63946;
+    }
+
+    .navigation {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        display: flex;
+        gap: 15px;
+        z-index: 1000;
+    }
+
+    .nav-btn {
+        background: #e63946;
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        font-size: 1.2em;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+    .nav-btn:hover {
+        background: #ff6b6b;
+        transform: scale(1.05);
+    }
+
+    .nav-btn:disabled {
+        background: #555;
+        cursor: not-allowed;
+    }
+
+    .slide-number {
+        position: fixed;
+        bottom: 30px;
+        left: 30px;
+        font-size: 1.2em;
+        color: #ccc;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 1.1em;
+    }
+
+    table th, table td {
+        padding: 15px;
+        text-align: left;
+        border: 1px solid #444;
+    }
+
+    table th {
+        background: #e63946;
+        font-weight: bold;
+    }
+
+    table tr:nth-child(even) {
+        background: rgba(255,255,255,0.05);
+    }
+
+    .highlight {
+        color: #ff6b6b;
+        font-weight: bold;
+    }
+
+    .center {
+        text-align: center;
+    }
+</style>
+</head> <body> <div class="slides" id="slides">
+    <!-- SLIDE 1: COVER -->
+    <div class="slide">
+        <h1>Implementasi Website Komunitas MMA<br>untuk Channel Sabuk Perang<br>menggunakan HTML dan CSS</h1>
+        <div class="author">
+            <p><strong>Dzaki Fasya</strong></p>
+            <p>NIM: 0110225165</p>
+            <p style="margin-top: 30px;">Mata Kuliah: Literasi Digital</p>
+            <p>STT Terpadu Nurul Fikri</p>
+            <p>2025</p>
+        </div>
+    </div>
+
+    <!-- SLIDE 2: LATAR BELAKANG -->
+    <div class="slide">
+        <h2>Latar Belakang</h2>
+        
+        <h3>📊 Fenomena MMA di Indonesia</h3>
+        <ul>
+            <li>MMA semakin populer di kalangan milenial & Gen Z</li>
+            <li>TikTok menjadi platform utama untuk konten MMA</li>
+            <li>Channel "Sabuk Perang" memiliki komunitas luas</li>
+        </ul>
+
+        <h3>⚠️ Permasalahan</h3>
+        <ul>
+            <li>Konten TikTok tidak terorganisir dengan baik</li>
+            <li>Interaksi komunitas terbatas</li>
+            <li>Tidak ada pusat informasi terpadu</li>
+        </ul>
+
+        <h3>✅ Solusi</h3>
+        <p class="highlight">Membangun website komunitas MMA menggunakan HTML & CSS</p>
+    </div>
+
+    <!-- SLIDE 3: RUMUSAN MASALAH & TUJUAN -->
+    <div class="slide">
+        <h2>Rumusan Masalah & Tujuan</h2>
+        
+        <div class="grid-2">
+            <div class="box">
+                <h3>❓ Rumusan Masalah</h3>
+                <ol>
+                    <li>Bagaimana pendekatan membangun website dengan HTML & CSS?</li>
+                    <li>Fitur apa yang perlu diintegrasikan?</li>
+                    <li>Bagaimana merancang struktur yang ramah pengguna?</li>
+                </ol>
+            </div>
+
+            <div class="box">
+                <h3>🎯 Tujuan Penelitian</h3>
+                <ol>
+                    <li>Menerapkan pembangunan website dengan HTML & CSS</li>
+                    <li>Mengembangkan fitur untuk interaksi komunitas</li>
+                    <li>Menghasilkan desain responsif dan intuitif</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 4: METODOLOGI -->
+    <div class="slide">
+        <h2>Metodologi Penelitian</h2>
+        
+        <h3>🔬 Jenis Penelitian</h3>
+        <p class="highlight">Research & Development (R&D)</p>
+
+        <h3>📋 Tahapan Penelitian</h3>
+        <div class="flowchart">
+            <div class="flowchart-item">1. Identifikasi Kebutuhan</div>
+            <div class="arrow">↓</div>
+            <div class="flowchart-item">2. Perancangan Website</div>
+            <div class="arrow">↓</div>
+            <div class="flowchart-item">3. Pembuatan Website</div>
+            <div class="arrow">↓</div>
+            <div class="flowchart-item">4. Pengujian Website</div>
+        </div>
+
+        <h3>📊 Metode Pengumpulan Data</h3>
+        <p>Observasi • Studi Literatur • Dokumentasi • Pengujian Mandiri</p>
+    </div>
+
+    <!-- SLIDE 5: ANALISIS KEBUTUHAN -->
+    <div class="slide">
+        <h2>Hasil Analisis Kebutuhan</h2>
+        
+        <h3>🎯 6 Fitur Utama Website</h3>
+        
+        <div class="grid-2">
+            <div>
+                <p><strong>1. Halaman Beranda</strong><br>Sambutan & highlight konten</p>
+                <p><strong>2. Galeri Video</strong><br>Koleksi tutorial teknik MMA</p>
+                <p><strong>3. Artikel & Berita</strong><br>Informasi terkini MMA</p>
+            </div>
+            <div>
+                <p><strong>4. Jadwal Pertandingan</strong><br>Event lokal & internasional</p>
+                <p><strong>5. Profil Fighter</strong><br>Statistik & prestasi fighter</p>
+                <p><strong>6. Kontak & Media Sosial</strong><br>Link ke platform lain</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 6: PERANCANGAN -->
+    <div class="slide">
+        <h2>Perancangan Website</h2>
+        
+        <h3>🗺️ Struktur Navigasi</h3>
+        <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 10px; font-family: monospace;">
+            <p>Home (Beranda)</p>
+            <p>├── Galeri Video</p>
+            <p>├── Artikel & Berita</p>
+            <p>├── Jadwal Pertandingan</p>
+            <p>├── Profil Fighter</p>
+            <p>└── Kontak</p>
+        </div>
+
+        <h3>🎨 Desain Visual</h3>
+        <ul>
+            <li><strong>Skema Warna:</strong> Hitam, Merah, Putih (tema MMA kuat & energik)</li>
+            <li><strong>Tipografi:</strong> Font sans-serif modern</li>
+            <li><strong>Layout:</strong> Grid responsif dengan wireframe & mockup</li>
+        </ul>
+    </div>
+
+    <!-- SLIDE 7: IMPLEMENTASI -->
+    <div class="slide">
+        <h2>Pembuatan Website</h2>
+        
+        <h3>💻 Teknologi yang Digunakan</h3>
+        <ul>
+            <li><strong>HTML5 Semantik:</strong> Structure dengan tag &lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;footer&gt;</li>
+            <li><strong>CSS3 Responsif:</strong> Flexbox, Grid, Media Queries</li>
+            <li><strong>Editor:</strong> Visual Studio Code</li>
+        </ul>
+
+        <h3>📄 File yang Dibuat</h3>
+        <p>6 halaman HTML: index.html, galeri.html, artikel.html, jadwal.html, fighter.html, kontak.html</p>
+        <p>1 file CSS: style.css</p>
+
+        <h3>📱 Fitur Responsive</h3>
+        <p>Breakpoint: <strong>768px</strong> (tablet) & <strong>480px</strong> (mobile)</p>
+    </div>
+
+    <!-- SLIDE 8: HASIL PENGUJIAN -->
+    <div class="slide">
+        <h2>Hasil Pengujian</h2>
+        
+        <h3>✅ Black Box Testing</h3>
+        <table>
+            <tr>
+                <th>Fitur</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td>Navigasi antar halaman</td>
+                <td class="highlight">✓ Berhasil</td>
+            </tr>
+            <tr>
+                <td>Link ke media sosial</td>
+                <td class="highlight">✓ Berhasil</td>
+            </tr>
+            <tr>
+                <td>Tampilan galeri video</td>
+                <td class="highlight">✓ Berhasil</td>
+            </tr>
+            <tr>
+                <td>Responsive layout</td>
+                <td class="highlight">✓ Berhasil</td>
+            </tr>
+        </table>
+
+        <h3>📱 Responsive Testing</h3>
+        <p>Desktop (1920px) • Laptop (1366px) • Tablet (768px) • Mobile (375px-414px)</p>
+        <p class="highlight">✓ Semua optimal</p>
+    </div>
+
+    <!-- SLIDE 9: KESIMPULAN -->
+    <div class="slide">
+        <h2>Kesimpulan</h2>
+        
+        <h3>🎯 Pencapaian Tujuan</h3>
+        <ol style="font-size: 1.2em;">
+            <li><strong>Pendekatan Pembangunan:</strong> Berhasil melalui 4 tahapan sistematis (identifikasi, perancangan, pembuatan, pengujian)</li>
+            <li><strong>Fitur Website:</strong> 6 fitur utama berhasil diintegrasikan dan berfungsi dengan baik</li>
+            <li><strong>Desain Responsif:</strong> Website dapat ditampilkan optimal di berbagai perangkat</li>
+        </ol>
+
+        <h3>✅ Hasil Validasi</h3>
+        <p class="highlight">✓ Valid HTML5 (W3C)</p>
+        <p class="highlight">✓ Valid CSS3 (W3C)</p>
+    </div>
+
+    <!-- SLIDE 10: SARAN -->
+    <div class="slide">
+        <h2>Saran & Pengembangan</h2>
+        
+        <h3>🚀 Rekomendasi Pengembangan Lanjutan</h3>
+        <ol>
+            <li><strong>Backend & Database:</strong> Implementasi PHP/Node.js + MySQL untuk konten dinamis</li>
+            <li><strong>JavaScript:</strong> Fitur interaktif (slider, lightbox, animasi)</li>
+            <li><strong>Sistem Keanggotaan:</strong> Login, komentar, forum diskusi</li>
+            <li><strong>Optimasi SEO:</strong> Meta tags, sitemap, structured data</li>
+            <li><strong>Integrasi API:</strong> Auto-update konten dari TikTok/Instagram</li>
+        </ol>
+    </div>
+
+    <!-- SLIDE 11: TERIMA KASIH -->
+    <div class="slide center">
+        <h1 style="font-size: 4em; margin-bottom: 50px;">TERIMA KASIH</h1>
+        <h2 style="border: none;">Tanya Jawab</h2>
+        <div class="author" style="margin-top: 80px;">
+            <p><strong>Dzaki Fasya</strong></p>
+            <p>NIM: 0110225165</p>
+            <p style="margin-top: 30px;">STT Terpadu Nurul Fikri</p>
+        </div>
+    </div>
+
+</div>
+
+<div class="slide-number" id="slideNumber">Slide 1 / 11</div>
+
+<div class="navigation">
+    <button class="nav-btn" id="prevBtn" onclick="prevSlide()">◀ Prev</button>
+    <button class="nav-btn" id="nextBtn" onclick="nextSlide()">Next ▶</button>
+</div>
+
+<script>
+    let currentSlide = 0;
+    const totalSlides = 11;
+    const slides = document.getElementById('slides');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const slideNumber = document.getElementById('slideNumber');
+
+    function updateSlide() {
+        slides.style.transform = `translateX(-${currentSlide * 100}vw)`;
+        slideNumber.textContent = `Slide ${currentSlide + 1} / ${totalSlides}`;
+        
+        prevBtn.disabled = currentSlide === 0;
+        nextBtn.disabled = currentSlide === totalSlides - 1;
+    }
+
+    function nextSlide() {
+        if (currentSlide < totalSlides - 1) {
+            currentSlide++;
+            updateSlide();
+        }
+    }
+
+    function prevSlide() {
+        if (currentSlide > 0) {
+            currentSlide--;
+            updateSlide();
+        }
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight' || e.key === ' ') {
+            nextSlide();
+        } else if (e.key === 'ArrowLeft') {
+            prevSlide();
+        }
+    });
+
+    updateSlide();
+</script>
+</body> </html>
